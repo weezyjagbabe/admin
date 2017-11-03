@@ -1,0 +1,71 @@
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+
+	RewriteRule ^dashboard/?$ index.php [NC,L]
+	RewriteRule ^logout-([/\a-zA-Z0-9_-]+)-?$ logout.php?logout=$1 [QSA,L,B]
+	
+	RewriteRule ^sign-in/?$ sign-in.php [NC,L]
+	RewriteRule ^users/?$ users.php [NC,L]
+	RewriteRule ^users/([0-9a-zA-Z]+) users.php?t=$1 [NC,L]
+	RewriteRule ^adduser/?$ adduser.php [NC,L]
+	RewriteRule ^edituser/?$ edituser.php [NC,L]
+	RewriteRule ^edituser/?$ edituser.php?t=$1 [NC,L]
+	RewriteRule ^user-details-([/\a-zA-Z0-9_-]+)-?$ user-details.php?user-details=$1 [QSA,L,B]
+	RewriteRule ^user-details/?$ user-details.php?user-details=$1&m=$2 [NC,L]
+	RewriteRule ^corporate-details/?$ corporate-details.php [NC,L]
+    RewriteRule ^corporate-details/([0-9a-zA-Z]+) corporate-details.php?t=$1 [NC,L]
+    RewriteRule ^site-details/?$ site-details.php [NC,L]
+    RewriteRule ^site-details/([0-9a-zA-Z]+) site-details.php?t=$1 [NC,L]
+    RewriteRule ^reset-password/?$ reset-password.php [NC,L]
+    RewriteRule ^reset-password-([/\a-zA-Z0-9_-]+)-([/\a-zA-Z0-9_-]+)-?$ reset-password.php?userEmail=$1&code=$2 [QSA,L,B]
+	RewriteRule ^history/?$ history.php [NC,L]
+	RewriteRule ^details/?$ details.php [NC,L]
+	RewriteRule ^details/([0-9a-zA-Z]+) details.php?t=$1&m=$2 [NC,L]
+	RewriteRule ^history/([0-9a-zA-Z]+) history.php?t=$1 [NC,L]
+	RewriteRule ^accounts/?$ accounts.php [NC,L]
+	RewriteRule ^previous-accounts/?$ previous-accounts.php [NC,L]
+	
+	RewriteRule ^transactions/?$ transactions.php [NC,L]
+	RewriteRule ^previous-transactions/?$ previous-transactions.php [NC,L]
+
+	RewriteRule ^dashboardBarChart/?$ dashboardBarChart.php [NC,L]
+	RewriteRule ^analytics/?$ analytics.php [NC,L]
+	RewriteRule ^demography/?$ demography.php [NC,L]
+	
+	RewriteRule ^providers providers.php [NC,L]
+	RewriteRule ^addprovider addprovider.php [NC,L]
+	RewriteRule ^providers/([0-9a-zA-Z]+) providers.php?t=$1 [NC,L]
+
+	RewriteRule ^updateprovider updateprovider.php [NC,L]
+    RewriteRule ^updateprovider/([0-9a-zA-Z]+) updateprovider.php?t=$1 [NC,L]
+
+	RewriteRule ^provider provider.php [NC,L]
+	RewriteRule ^provider/([0-9a-zA-Z]+) provider.php?t=$1 [NC,L]
+	
+	RewriteRule ^source-of-fund source-of-fund.php [NC,L]
+
+	RewriteRule ^services services.php [NC,L]
+	RewriteRule ^services/([0-9a-zA-Z]+) services.php?t=$1 [NC,L]
+
+    RewriteRule ^addfunds addfunds.php [NC,L]
+    RewriteRule ^editfunds editfunds.php [NC,L]
+    RewriteRule ^editfunds/([0-9a-zA-Z]+) editfunds.php?t=$1 [NC,L]
+
+    RewriteRule ^activatefunds activatefunds.php [NC,L]
+    RewriteRule ^activatefunds/([0-9a-zA-Z]+) activatefunds.php?t=$1&k=$2 [NC,L]
+
+	RewriteRule ^updateservice updateservice.php [NC,L]
+    RewriteRule ^updateservice/([0-9a-zA-Z]+) updateservice.php?t=$1 [NC,L]
+
+    RewriteRule ^deleteservice deleteservice.php [NC,L]
+    RewriteRule ^deleteservice/([0-9a-zA-Z]+) deleteservice.php?t=$1 [NC,L]
+
+	RewriteRule ^sliders-adbanners/?$ sliders-adbanners.php [NC,L]
+	RewriteRule ^background-images/?$ background-images.php [NC,L]
+	
+	RewriteRule ^privacy-policy/?$ privacy-policy.php [NC,L]
+	RewriteRule ^terms-conditions/?$ terms-conditions.php [NC,L]
+	
+	RewriteRule ^404/?$ 404.php [NC,L]
+		
+</IfModule>
